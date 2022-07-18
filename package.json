@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^13.8.1",
+    "express": "^4.18.1"
+  },
+  "name": "antorymods",
+  "version": "1.0.0",
+  "description": "An automoderation bot for Antory Community!",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Golden Bonnie",
+  "license": "ISC"
+}
