@@ -1,15 +1,16 @@
 const client = require('../../main.js');
-const config = require('../../configs/config.json');
+require('dotenv').config();
+const prefix = process.env.PREFIX;
 
 client.on('messageCreate', async (message) => {
   if(message.author.bot && message.type === 'CHANNEL_PINNED_MESSAGE') {
     message.delete();
   }
   if (message.author.bot) return;
-  if (!message.content.startsWith(config.prefix)) return;
+  if (!message.content.startsWith(prefix)) return;
   if (!message.guild) return;
   if (!message.member) message.member = await message.guild.fetchMember(message);
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
   if (cmd.length == 0) return;
   let command = client.commands.get(cmd)

@@ -9,6 +9,7 @@ app.listen(port, () => console.log(`Example app listening on port http://localho
 
 // Discord.js
 
+require('dotenv').config();
 const Discord = require('discord.js');
 const { Client, Intents, MessageEmbed, Collection } = require('discord.js');
 const { readdirSync } = require('fs');
@@ -18,7 +19,6 @@ const client = new Client({
         Intents.FLAGS.GUILD_MESSAGES,
     ],
 });
-const { token, prefix } = require('./configs/config.json');
 
 module.exports = client;
 
@@ -32,4 +32,4 @@ client.categories = readdirSync('./src/Commands Folder/');
 });
 
 
-client.login(token);
+client.login(process.env.TOKEN);

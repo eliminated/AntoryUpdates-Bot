@@ -1,10 +1,11 @@
 const client = require('../../main.js');
-const config = require('../../configs/config.json');
+require('dotenv').config();
+const prefix = process.env.PREFIX;
 
 client.on('messageCreate', async (message) => {
     // Detects message content
     if (message.author.bot) return;
-    if (message.content.startsWith(config.prefix)) return;
+    if (message.content.startsWith(prefix)) return;
     if (!message.guild) return;
 
     let badwords = [
