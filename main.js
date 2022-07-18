@@ -32,4 +32,4 @@ client.categories = readdirSync('./src/Commands Folder/');
 });
 
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN);    // GITHUB FUCK OFF
